@@ -112,6 +112,8 @@ python3 scripts/scan-private.py
 - 규칙을 바꾸는 제안이면 **왜 지금 규칙이 문제인지**를 사례로 보인다
 - 한국어 문서는 단문·`~다` 종결로 쓴다. 영어 문서는 평이한 영어로
 - **[용어집](docs/glossary.md)에 있는 말을 바꿨으면 PR 본문에 적는다.** 여덟 군데로 퍼진다
+- **링크는 폴더가 아니라 파일로 건다.** `examples/case-01/` 은 GitHub 에서는 파일 목록이 보이지만
+  [웹사이트](https://kdreamtomaster.github.io/ax-commons/)에서는 404 다. `.../01-analysis.md` 처럼 적는다
 
 ### 먼저 이슈를 열어야 하는 것
 

@@ -122,7 +122,7 @@ Apache 인큐베이터 제안서가 요구하는 항목을 이 저장소에 맞�
 지금 관점이 하나다. **한국 · 프리세일즈 · 제조업 인접.**
 
 예시 5건이 전부 같은 가상 회사이고 같은 산업이다.
-[case-05](examples/case-05-three-way/)에서 드러났듯,
+[case-05](examples/case-05-three-way/01-three-way-review.md)에서 드러났듯,
 **같은 배경을 가진 사람이 늘어도 공유 전제는 안 걸러진다.**
 
 **완화** → [디스커션 #22](https://github.com/Kdreamtomaster/ax-commons/discussions/22)에서 논의 중.
