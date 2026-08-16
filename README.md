@@ -10,25 +10,29 @@
 
 ## 무엇이 나오나
 
-채용공고·뉴스·공시만 넣으면 이런 게 나온다. 그중 하나만 보이면 이렇다.
+같은 회사, 같은 안건을 **세 자리가 다르게 본다.** 이 도구는 그 어긋남을 드러낸다.
 
 
-## 임기 게이트
+## 어긋난 지점 — 같은 데이터를 두고
 
-만날 사람: 생산본부장(상무) · 2024년 외부 영입 · 잔여 임기 추정 1년 [가설]
+쟁점: 생산 실적 데이터는 정형인가
 
-| 개입                | 회수   | 잔여 임기 | 판정                        |
-|--------------------|-------|---------|----------------------------|
-| 실적 집계 자동화      | 0.5년  | 1년     | ✅ 통과                     |
-| 재고 가시성·예측      | 1.5년  | 1년     | ⚠️ 후임자 리스크             |
-| 견적 시스템          | 2년+   | 1년     | ❌ 이 결재선에선 통과되지 않음  |
+| 자리 | 주장 | 등급 |
+|---|---|---|
+| ① 파는 쪽  | "정형이다. 자동 집계가 된다" | [추론] |
+| ③ 일하는 쪽 | "손으로 고쳐 넣는 값이 하루 아홉 번" | [사실] |
 
-통과 1건, 탈락 2건. 전부 통과하지 않았으므로 다시 계산하지 않는다.
+판정: 둘 다 맞다 — 결과는 정형, 과정은 비정형.
+→ 어느 쪽도 처음엔 안 갖고 있던 답: 두 층 설계
 
 
-기술적으로 옳은 안건이 왜 멈추는지를 **회수 기간과 담당자 임기의 관계**로 판정한다.
-좋은 개입이라도 임기를 넘으면 그대로 적는다.
-대신 **"결재선을 어디까지 올려야 하는가"** 를 알려준다.
+어느 자리에 서 있든, **나머지 두 자리의 시각을 인터뷰·공시·업계 동향으로 재구성해**
+내 시각과 맞붙인다. 재구성한 상대와의 일치는 정보가 아니다.
+**어긋남만 정보고, 그 어긋남이 진짜 상대에게 물을 질문이 된다.**
+
+안건마다 이런 질문도 함께 나온다 — *"담당하실 분이 이 결과를 보실 수 있는 구조인가요?"*
+회수 기간이 결정하는 사람의 시간 지평을 넘으면 기술적으로 옳아도 멈추기 때문이다.
+잔여 임기는 모르는 게 보통이라, 모르면 판정하지 않고 이 질문을 그대로 낸다.
 
 전체 산출은 [예시](examples/)에 5건 있다. 전부 가공 데이터다.
 
@@ -311,26 +315,32 @@ Apache 인큐베이터 방식에서 쓸 만한 것만 골라 왔다.
 
 ### What it actually produces
 
-Give it job postings, filings, and news. Among other things, you get this:
+The same company, the same issue — three seats see it differently. This tool
+surfaces the disagreement:
 
 ```
-## Tenure Gate
+## Where the views split — same data
 
-Counterpart: VP of Production · hired externally 2024 · ~1 yr remaining [hypothesis]
+At issue: is production data structured?
 
-| Intervention             | Payback | Remaining | Verdict                        |
-|--------------------------|---------|-----------|--------------------------------|
-| Automate shift reporting | 0.5 yr  | 1 yr      | ✅ clears the gate              |
-| Inventory visibility     | 1.5 yr  | 1 yr      | ⚠️ successor risk               |
-| Quoting system           | 2 yr+   | 1 yr      | ❌ not at this approval level   |
+| Seat            | Claim                                      | Grade      |
+|-----------------|--------------------------------------------|------------|
+| ① Selling side  | "Structured. Auto-aggregation will work"   | [inference]|
+| ③ Doing side    | "I hand-correct nine values a day"         | [fact]     |
 
-1 clears, 2 don't. Not everything passed, so it doesn't get recomputed.
+Verdict: both are right — the *output* is structured, the *process* is not.
+→ The answer neither side started with: a two-layer design.
 ```
 
-A technically correct proposal dies when its payback outlasts the sponsor's tenure.
-Almost no analysis asks that question. This one asks it first — and when something
-fails the gate, it tells you **how far up the decision has to go** rather than just
-saying no.
+Whichever seat you're in, it **reconstructs how the other two would see the
+issue** — from published interviews, filings, and industry coverage — and puts
+the views against each other. Agreement with a reconstructed counterpart means
+little; the disagreements become the questions you ask the real one.
+
+One question ships with every issue: *will the sponsor still be around when
+this pays back?* Payback that outlasts the decision maker's horizon kills
+technically correct proposals. Tenure is usually unknown — so instead of
+guessing a number, the tool hands you the question itself.
 
 Five worked examples are in [`examples/`](examples/). All fabricated data.
 

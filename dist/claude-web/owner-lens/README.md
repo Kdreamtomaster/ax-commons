@@ -4,7 +4,8 @@
 
 고객사 안에 들어가 본 적 없는 상태에서, 채용공고·뉴스·공시 같은 공개 신호만으로
 오너가 지금 무엇을 극대화하고 무엇을 방어하는지 역설계한다.
-그리고 거기서 나온 개입안이 **담당자 임기 안에 회수되는지** 판정한다.
+그리고 어느 자리에 서 있든 **나머지 두 자리의 시각을 재구성해 맞붙인다.**
+어긋난 지점이 진짜 상대에게 물을 질문이 된다.
 
 Claude 웹·앱 채팅에서 쓴다. 문답으로 정보를 받아가며 단계적으로 좁혀 간다.
 
@@ -31,7 +32,7 @@ Claude 웹·앱 채팅에서 쓴다. 문답으로 정보를 받아가며 단계�
 - 그래서 흉내 내지 않는다. **추적 가능한 버전**을 만든다.
   출처 대장·검증 로그·재구성 확인하지 못한 영역을 붙인다. 원본에는 없는 것들이다.
 - 한 사람의 인사이트 원장은 몇 건짜리 경험칙이지만,
-  **여럿이 모으면 독점 벤치마크를 대신할 자료**이 된다. 그것이 이 프로젝트의 끝 그림이다.
+  **여럿이 모으면 독점 벤치마크를 대신할 자료**가 된다. 그것이 이 프로젝트의 끝 그림이다.
 
 ---
 
@@ -42,10 +43,15 @@ Claude 웹·앱 채팅에서 쓴다. 문답으로 정보를 받아가며 단계�
 "구체적으로 써라"는 안 통한다. 일반론을 밖으로 꺼내 명시적으로 버리지 않으면
 계속 되살아난다. 각 단계는 `뻔한 답 → 버림 → 실제 답` 순서를 강제한다.
 
-**2. 임기 게이트**
+**2. 맞은편을 재구성해서 부딪친다**
 
-좋은 개입이라도 회수가 담당 임원 임기를 넘으면 팔리지 않는다.
-이건 각주가 아니라 **통과/탈락 판정**이다. 전부 통과하면 낙관적으로 본 것으로 보고 다시 계산한다.
+어느 자리를 골랐든 나머지 두 자리의 시각을 인터뷰·공시·업계 동향으로 재구성해 맞붙인다.
+재구성한 상대와의 **일치는 정보가 아니다.** 어긋남만 정보고,
+그 어긋남이 진짜 상대에게 물을 질문이 된다.
+
+임기 게이트도 그 질문 중 하나다 — *"이 사람이 결과를 볼 때까지 자리에 있는가."*
+잔여 임기를 모르면 판정하지 않고 이 질문을 그대로 낸다.
+등기임원의 공시된 임기도 상한이지 예측이 아니다. 중도 교체가 흔하다.
 
 **3. 모른다는 사실이 산출물이다**
 
@@ -85,19 +91,22 @@ Claude 웹·앱 채팅에서 쓴다. 문답으로 정보를 받아가며 단계�
 
 ---
 
-## 네 가지 모드
+## 세 자리, 여섯 모드
 
-서 있는 자리에 따라 봐야 할 것이 다르다. R0에서 먼저 고른다.
+처음 묻는 건 하나다. **어느 쪽에 서 계신가요?**
 
-| | 모드 | 누가 |
-|---|---|---|
-| A | 제안 준비 | 파는 쪽. 고객사를 분석해 미팅 가설을 만든다 |
-| B | 자사 진단 | 사는 쪽. 우리 회사를 같은 렌즈로 본다 |
-| C | **제안 검증** | 사는 쪽. 받은 제안서의 ROI 주장을 임기 게이트로 재계산한다 |
-| D | **자료 재구성** | 자료가 아예 없을 때. 공개 뉴스·공시로 리포트를 다시 만든다 |
+| 답 | 들어가는 모드 |
+|---|---|
+| **① 파는 쪽** (AX 회사) | A 제안 준비 |
+| **② 사는 쪽** (AX 추진 조직) | B 자사 진단 / **C 제안 검증** |
+| **③ 일하는 쪽** (현업) | E 현업 관점 |
+
+D(자료 재구성)와 F(대립 검토)는 자리가 아니라 **시점**으로 정해진다.
+자료가 거의 없으면 D가 앞에 붙고, 서로 다른 자리의 문서가 둘 모이면 F를 안내한다.
 
 C와 D가 주권이 실제로 움직이는 자리다.
 C는 벤더 주장을 검증하게 하고, D는 비공개 자료 없이 시작할 수 있게 한다.
+그리고 어느 모드든 마지막에 **맞은편 재구성**이 붙는다 — 혼자여도 세 자리로 간다.
 
 ## 구조
 
@@ -151,20 +160,24 @@ templates/
 - 채용공고 해석 규칙 추가
 - 다른 언어 번역
 
-**라이선스: 미정.** 비영리·오픈소스로 풀 예정. 정해지면 여기에 적는다.
+**라이선스: [CC0 1.0](../../LICENSE).** 퍼블릭 도메인. 저작자 표시 의무도 없다.
 
 ---
 
 ## English
 
 **owner-lens** reconstructs what a company's leadership is actually optimizing
-for, using nothing but public signals — job postings, filings, news. It then
-asks a question most business analysis skips: does this change pay back **within
-the decision maker's remaining tenure?**
+for, using nothing but public signals — job postings, filings, news. Then,
+whichever seat you're in — vendor, internal task force, or the people doing the
+work — it **reconstructs how the other two seats would see the same issue**,
+from published interviews, filings, and industry coverage, and puts the views
+against each other. Agreement with a reconstructed counterpart means little;
+the disagreements become the questions you ask the real one.
 
-Built for people who have to understand a company from the outside. Six modes
-cover the vendor, the internal task force, and the people doing the work, so it
-isn't only a selling tool.
+One of those questions most analysis skips: *will the decision maker still be
+around when this pays back?* When tenure is unknown — it usually is — the tool
+doesn't guess a number; it hands you the question to ask. Even a registered
+term is a ceiling, not a prediction.
 
 It works by conversation. It asks for very little, drafts something rough on
 purpose, and lets you correct it — most people find fixing a wrong draft far
