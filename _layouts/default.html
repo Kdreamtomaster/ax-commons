@@ -156,6 +156,11 @@ pre code{background:none; padding:0; font-size:1em; word-break:normal; white-spa
 }
 #issues .state{color:var(--fg-faint); font-size:.88rem; padding:.8rem 0}
 
+/* ---------- 댓글 ---------- */
+.comments{margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--line)}
+.comments h2{margin-top:0; font-size:1.15rem}
+.comments > p{font-size:.88rem; color:var(--fg-soft); margin:.3rem 0 1.2rem}
+
 /* ---------- 페이지 발 ---------- */
 .pagefoot{
   margin-top:4rem; padding-top:1.4rem; border-top:1px solid var(--line);
@@ -221,6 +226,33 @@ pre code{background:none; padding:0; font-size:1em; word-break:normal; white-spa
 
   <main class="main" id="content">
     {{ content }}
+
+    {% unless page.comments == false or page.url == "/404.html" %}
+    <section class="comments">
+      <h2>이 문서에 대해 한마디</h2>
+      <p>
+        아래 댓글은 이 저장소의
+        <a href="https://github.com/{{ site.repository }}/discussions">GitHub 디스커션</a>에 그대로 쌓인다.
+        GitHub 계정으로 로그인하면 된다. 반박 환영 — <a href="{{ '/CODE_OF_CONDUCT.html' | relative_url }}">근거를 붙이면 세게 말해도 된다.</a>
+      </p>
+      <script src="https://giscus.app/client.js"
+        data-repo="Kdreamtomaster/ax-commons"
+        data-repo-id="R_kgDOT5xmKQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOT5xmKc4DDfe-"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+    {% endunless %}
 
     <div class="pagefoot">
       <span>CC0 1.0 · 퍼블릭 도메인</span>
