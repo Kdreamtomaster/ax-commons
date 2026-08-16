@@ -1,19 +1,63 @@
 # ax-commons
 
-**비공개 자료 없이도 고객과 현업이 스스로 판단할 수 있게 하는 AI 도구 모음.**
+**고객사 안에 들어가 보기 전에, 공개된 신호만으로 그 회사를 읽는 AI 도구 모음.**
 
-AX(AI 전환)에는 세 당사자가 있다. **AX 회사 · AX TF · 현업.**
-셋 다 필요하고, 각자 다른 것을 안다.
+`CC0` · 설치 불필요 · 한국어 원본 · [English below](#english)
 
-그중 **일은 현업이 가장 잘 안다.** 어디서 시간이 새는지, 어떤 예외가 자주 나오는지,
-어떤 정보가 시스템에 아예 없는지는 그 자리에 있는 사람만 안다.
-**그 앎이 논의에 더 많이 반영될수록 좋은 결정이 나온다.**
+---
 
-판단의 근거가 되는 자료는 한쪽에 모여 있다. 실사 보고서나 산업 벤치마크는
-대체로 유료이거나 계약 당사자만 볼 수 있다.
-그래서 이 저장소는 **공개된 신호만으로 판단하는 방법**을 연다.
+## 무엇이 나오나
 
-자료를 내놓으라고 요구하지 않는다. **밖에서 재는 방법을 공개한다.**
+채용공고·뉴스·공시만 넣으면 이런 게 나온다. 그중 하나만 보이면 이렇다.
+
+```
+## 임기 게이트
+
+만날 사람: 생산본부장(상무) · 2024년 외부 영입 · 잔여 임기 추정 1년 [가설]
+
+| 개입                | 회수   | 잔여 임기 | 판정                      |
+|--------------------|-------|---------|--------------------------|
+| 실적 집계 자동화      | 0.5년  | 1년     | ✅ 팔린다                  |
+| 재고 가시성·예측      | 1.5년  | 1년     | ⚠️ 후임자 리스크            |
+| 견적 시스템          | 2년+   | 1년     | ❌ 이 자리에선 안 팔린다      |
+
+통과 1건, 탈락 2건. 전부 통과하지 않았으므로 다시 계산하지 않는다.
+```
+
+기술적으로 옳은 제안이 왜 안 팔리는지를 **회수 기간과 담당자 임기의 관계**로 판정한다.
+좋은 개입이라도 임기를 넘으면 그대로 적는다. 대신 **"결정권을 어디까지 올려야 하는가"** 를 알려준다.
+
+전체 산출은 [예시](examples/)에 5건 있다. 전부 가공 데이터다.
+
+---
+
+## FDE라면 이 셋 중 하나는 겪었을 것이다
+
+고객사에 들어가서 만드는 일을 하는 사람 — Forward Deployed Engineer, 솔루션 아키텍트,
+프리세일즈, 컨설턴트 — 이 도구는 그 자리에서 겪는 세 가지를 다룬다.
+
+| 겪는 일 | 이 저장소가 다루는 방식 |
+|---|---|
+| **들어가기 전에 도메인을 알아야 하는데 자료가 없다** | 채용공고·뉴스·공시만으로 회사의 목적함수를 역설계한다 |
+| **잘 만들었는데 안 쓰인다** | 단절마다 묻는다 — *"여기 데이터를 안 넣으면 누가 곤란해지는가?"* 아무도 안 곤란하면 넣어도 안 쓰인다 |
+| **배운 게 다음 고객사로 안 넘어간다** | 경험을 검증 등급이 붙은 항목으로 만들고, 남의 것이 내 조건에 통하는지 판정한다 |
+
+FDE는 파는 쪽·사는 쪽·일하는 쪽을 **다 오간다.** 그래서 이 도구는 세 자리 모두를 지원한다.
+같은 회사를 세 자리에서 각각 본 예시가 있고, 그 셋을 맞붙인 예시도 있다.
+
+---
+
+## 누가 왜 만들었나
+
+프리세일즈 실무자가 **자기 문제를 풀려고** 만들었다. 회사 제품이 아니고 파는 것도 아니다.
+
+막힌 지점은 이랬다. 대기업을 상대하면 결정권자를 만날 일이 없는데,
+제안이 통하려면 그쪽의 사업 모델과 목적을 알아야 한다.
+그 재료(실사 보고서·산업 벤치마크)는 유료이거나 계약 당사자만 볼 수 있다.
+
+그래서 **자료를 달라고 하는 대신 밖에서 재는 방법을 공개**하기로 했다.
+정확도는 떨어진다. 숨기지 않고 근거 등급으로 표기한다.
+그래도 "없어서 아무것도 못 함"과 "거칠게라도 앎"의 차이는 크다.
 
 > 설계 철학은 [PHILOSOPHY.md](PHILOSOPHY.md)에 있다. 장식이 아니라 설계를 규정하는 규칙이다.
 
@@ -39,10 +83,11 @@ AX(AI 전환)에는 세 당사자가 있다. **AX 회사 · AX TF · 현업.**
 
 ### 도구 1 · owner-lens — 오너의 렌즈
 
-공개 신호(채용공고·뉴스·공시)만으로 회사의 목적함수를 역설계한다.
-그리고 **그 개입이 담당자 임기 안에 회수되는지** 판정한다.
-
+공개 신호로 회사의 목적함수를 역설계하고, 임기 게이트로 판정한다.
 **처음에 묻는 건 딱 하나다. 어느 쪽에 서 계신가요?**
+
+> AX = AI Transformation. DX(디지털 전환)의 다음 단계로 쓰는 말이다.
+> 이 저장소에서는 **AI를 실제 업무에 들이는 일 전반**을 가리킨다.
 
 | 답 | 하는 일 |
 |---|---|
@@ -224,8 +269,49 @@ python scripts/build.py        # dist 전체 재생성
 
 ## English
 
-**ax-commons helps the people closest to the work judge AI-transformation
-proposals for themselves.**
+**Read a company from the outside — before you ever get inside it.**
+
+`CC0` · No install · Korean-first, English summary
+
+### What it actually produces
+
+Give it job postings, filings, and news. Among other things, you get this:
+
+```
+## Tenure Gate
+
+Counterpart: VP of Production · hired externally 2024 · ~1 yr remaining [hypothesis]
+
+| Intervention             | Payback | Remaining | Verdict                      |
+|--------------------------|---------|-----------|------------------------------|
+| Automate shift reporting | 0.5 yr  | 1 yr      | ✅ sellable                   |
+| Inventory visibility     | 1.5 yr  | 1 yr      | ⚠️ successor risk             |
+| Quoting system           | 2 yr+   | 1 yr      | ❌ not at this person's level |
+```
+
+A technically correct proposal dies when its payback outlasts the sponsor's tenure.
+Almost no analysis asks that question. This one asks it first — and when something
+fails the gate, it tells you **how far up the decision has to go** rather than just
+saying no.
+
+Five worked examples are in [`examples/`](examples/). All fabricated data.
+
+### If you're an FDE, you've hit at least one of these
+
+Forward deployed engineers, solutions architects, pre-sales, consultants — anyone
+who has to build inside someone else's company:
+
+| The problem | What this does about it |
+|---|---|
+| **You need domain context before you're inside** | Reverse-engineers what leadership is optimizing for, from public signals only |
+| **You built the right thing and nobody uses it** | At every process break it asks: *"if this data doesn't get entered, who is inconvenienced?"* If nobody is, a tool there won't get used |
+| **What you learned doesn't transfer to the next account** | Turns experience into entries with explicit verification status, and checks whether someone else's lesson applies to your conditions |
+
+FDEs move between selling, buying, and doing. All three seats are supported, with
+worked examples of the same company seen from each seat — and one where those views
+are put against each other.
+
+### Why it's built this way
 
 Three groups shape an AI transformation: the vendor, the internal task force,
 and the people who actually do the work. Each knows something the others don't,
@@ -263,13 +349,26 @@ and **a guide to arguing against it.**
 
 Point at your own weak spots first, or the tool becomes one more authority.
 
+That applies to the repo itself. Everything unverified is
+[filed as an open issue](https://github.com/Kdreamtomaster/ax-commons/issues) —
+including the tenure-gate threshold, which is a rule of thumb, not a measured value
+([#1](https://github.com/Kdreamtomaster/ax-commons/issues/1)). There's even an open
+discussion asking whether this tool
+[quietly favors the selling side](https://github.com/Kdreamtomaster/ax-commons/discussions/18).
+
 ### Getting started
 
 Paste [`prompts/system-prompt-full.md`](prompts/system-prompt-full.md) into any
 AI chat. No install, no account. Packages for Claude, Codex, OpenClaw, Hermes
 Agent, and local models under 30B are in [`dist/`](dist/).
 
-Written in Korean first; the English here is a summary, not a full translation
-([#9](https://github.com/Kdreamtomaster/ax-commons/issues/9)).
+New here? Start with the
+[`첫걸음`](https://github.com/Kdreamtomaster/ax-commons/labels/%EC%B2%AB%EA%B1%B8%EC%9D%8C)
+label — issues where you just run something and report what happened.
+Reports that the tool got it **wrong** are worth more than confirmations.
+
+Built by a pre-sales practitioner to solve their own problem. Not a company product,
+not for sale. Korean is the source language; this section is a summary, not a full
+translation ([#9](https://github.com/Kdreamtomaster/ax-commons/issues/9)).
 
 **CC0 — public domain.** Fork it, change it, sell it. Easy reuse is the point.
