@@ -1,0 +1,70 @@
+name: "④ 플랫폼 연동 보고 · 오류 신고"
+description: "설치 안내대로 했는데 안 되거나, 경로·명령어가 틀렸을 때."
+title: "[연동] "
+labels: ["adapter", "docs"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        일부 연동 문서는 **공식 문서만 보고 썼고 직접 돌려보지 않았습니다.**
+        경로나 명령어가 틀렸을 수 있습니다. 알려주시면 고칩니다.
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 플랫폼
+      options:
+        - "Claude 웹·앱"
+        - "Claude Code"
+        - "GPT Codex"
+        - "OpenClaw"
+        - "Hermes Agent"
+        - "로컬 모델 (Ollama/vLLM/LM Studio)"
+        - "시스템 프롬프트 붙여넣기"
+        - "그 밖"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: 운영체제
+      options:
+        - "윈도우 (네이티브)"
+        - "윈도우 (WSL)"
+        - "맥 (애플 실리콘)"
+        - "맥 (인텔)"
+        - "리눅스 (데비안 계열)"
+        - "리눅스 (RHEL 계열)"
+        - "그 밖"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 무슨 일인가요
+      options:
+        - "문서대로 했는데 안 된다"
+        - "경로나 명령어가 문서와 다르다"
+        - "됐다 — 확인 보고"
+        - "새 플랫폼 연동을 추가하고 싶다"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 한 일과 결과
+      description: 친 명령과 나온 메시지를 그대로 붙여 주시면 제일 빠릅니다.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: 맞는 값을 아신다면
+      placeholder: |
+        예) 스킬 경로가 ~/.hermes/skills/<범주>/<이름>/ 가 아니라 ...
+            자동 메모리를 끄는 설정 키는 ...

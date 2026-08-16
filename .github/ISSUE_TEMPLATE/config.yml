@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "먼저 읽어 주세요 — 기여 안내"
+    url: https://github.com/Kdreamtomaster/ax-commons/blob/main/CONTRIBUTING.md
+    about: "무엇이 제일 필요한지, 원장 항목은 어떤 형식으로 내는지 적혀 있습니다."
+  - name: "설계 철학"
+    url: https://github.com/Kdreamtomaster/ax-commons/blob/main/PHILOSOPHY.md
+    about: "왜 이렇게 만들었는지. 고치면 다른 도구가 되는 부분이 어디인지."
+  - name: "질문이나 토론"
+    url: https://github.com/Kdreamtomaster/ax-commons/discussions
+    about: "버그나 실측 보고가 아니라 이야기를 나누고 싶다면."

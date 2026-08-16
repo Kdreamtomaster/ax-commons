@@ -1,0 +1,110 @@
+name: "② 인사이트 원장 항목 제출"
+description: "현장에서 얻은 전이 가능한 배움을 공유재로 내놓습니다."
+title: "[원장] "
+labels: ["insight-entry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `insight-commons` 의 규칙을 그대로 따릅니다. **다섯 칸을 다 채워야 받습니다.**
+
+        특히 **메커니즘** 칸이 제일 자주 비고 제일 치명적입니다.
+        "왜 그런지는 모르지만 그렇더라"는 기록으로는 남기되 **남에게 전이시킬 수 없습니다.**
+        설명 없는 상관은 조건이 바뀌면 깨지고, 깨졌을 때 왜인지도 모릅니다.
+
+  - type: input
+    id: title
+    attributes:
+      label: 한 줄 제목
+      placeholder: "회수 기간이 임기를 넘으면 담당자 선에서 죽는다"
+    validations:
+      required: true
+
+  - type: textarea
+    id: condition
+    attributes:
+      label: 조건 — 어떤 상황에서
+      description: 메커니즘이 작동하는 데 **필요한 조건만** 적습니다. 무관한 조건(산업·지역)을 넣으면 전이 범위가 근거 없이 좁아집니다.
+      placeholder: "전문 경영 조직 · 담당 임원 잔여 임기 2년 이하 · 규제 대응이 아닌 안건"
+    validations:
+      required: true
+
+  - type: textarea
+    id: observation
+    attributes:
+      label: 관찰 — 무엇이 일어났는가
+    validations:
+      required: true
+
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: "메커니즘 — 왜 그렇게 되는가 ★"
+      description: |
+        이게 없으면 받지 않습니다. 관찰을 다시 쓰는 것은 메커니즘이 아닙니다.
+        메커니즘을 쓰다 보면 경계가 저절로 나옵니다.
+      placeholder: |
+        나쁨: "오너 기업은 의사결정이 빠르다"  ← 관찰일 뿐 설명이 아님
+
+        좋음: "오너 기업은 검토 위임이 적다. 자기 돈이라고 인식하기 때문이다.
+              그래서 오너가 관심 없는 안건은 오히려 더 느리다."
+              ← 경계가 자동으로 나옴
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: 전이 범위 — 어디까지 적용되는가
+      placeholder: "전문 경영 한정. 오너 경영에는 적용 안 됨(자기 회사라 시야가 길다)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: falsify
+    attributes:
+      label: 반증 조건 — 무엇이 관찰되면 이게 틀린 것인가
+      description: '"이게 안 통하면 틀린 것" 같은 순환은 안 됩니다. 봤는지 안 봤는지 판정 가능해야 합니다.'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: 검증 상태
+      description: 부풀리지 마세요. 1회는 1회입니다. "서로 다른 건"은 다른 회사·다른 프로젝트를 뜻합니다.
+      options:
+        - "[1회, 미검증]"
+        - "[2회, 잠정] — 서로 다른 건에서 두 번"
+        - "[확인됨] — 서로 다른 건에서 3회 이상, 반례 없음"
+        - "[반례 있음]"
+        - "[반증됨]"
+    validations:
+      required: true
+
+  - type: input
+    id: decay
+    attributes:
+      label: 관찰 시점과 유효기간 추정
+      description: "기술 12개월 / 조직·제도 24개월 / 시장 구조 36개월 / 사람의 행동 60개월+"
+      placeholder: "2026-03 / 24개월 (조직 제도 의존)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: counter
+    attributes:
+      label: 반례
+      description: 있으면 반드시 적습니다. 반례는 손실이 아니라 조건을 정확하게 만드는 재료입니다.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 확인
+      options:
+        - label: "이 문장만 보고 어느 회사인지 좁혀지지 않는다"
+          required: true
+        - label: "숫자를 그대로 옮기지 않고 관계로 바꿨다"
+          required: true
+        - label: "메커니즘 칸이 관찰의 반복이 아니라 설명이다"
+          required: true

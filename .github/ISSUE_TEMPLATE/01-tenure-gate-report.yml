@@ -1,0 +1,88 @@
+name: "① 임기 게이트 실측 보고"
+description: "임기 게이트 판정이 실제로 맞았는지 알려주세요. 이 프로젝트에서 가장 필요한 기여입니다."
+title: "[게이트] "
+labels: ["field-report", "verification", "tenure-gate"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `safe_ratio: 0.6` 은 **경험칙이지 검증된 값이 아닙니다.**
+        쓰고 나서 결과를 알려주시면 그게 이 프로젝트에서 제일 값진 기여입니다.
+
+        > **틀렸다는 보고가 맞았다는 보고보다 값집니다.** 조건을 좁힐 수 있게 해 주기 때문입니다.
+
+        회사가 특정되지 않게 써 주세요. **숫자 대신 관계로** 적으면 대개 해결됩니다.
+        (`매출 ○,○○○억` → `매출 수천억대`)
+
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: 결과
+      description: 게이트 판정과 실제가 맞았나요?
+      options:
+        - "맞았다 — 통과시킨 안건이 실제로 진행됐다"
+        - "맞았다 — 탈락시킨 안건이 실제로 막혔다"
+        - "틀렸다 — 통과시켰는데 안 됐다"
+        - "틀렸다 — 탈락시켰는데 상대가 오히려 원했다"
+        - "확인 못 함"
+    validations:
+      required: true
+
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 조건
+      description: 게이트가 작동한 환경. 회사를 특정하지 않는 선에서.
+      placeholder: |
+        소유구조: 전문 경영 / 오너 경영 / PE 보유 / 상장사
+        담당자 자리: 임원 / 팀장 / C레벨
+        잔여 임기 추정: 약 O년
+        산업 범주: (넓게)
+        규모대: (넓게)
+    validations:
+      required: true
+
+  - type: textarea
+    id: calculation
+    attributes:
+      label: 계산과 판정
+      placeholder: |
+        추정 회수 기간: O년
+        잔여 임기: O년
+        비율: O.OO
+        게이트 판정: 팔린다 / 후임자 리스크 / 안 팔린다
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제로 일어난 일
+      validations:
+        required: true
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: 어긋났다면 추정 원인
+      description: 틀린 이유가 맞은 이유보다 정보량이 큽니다.
+      placeholder: |
+        예) 회수는 짧았지만 담당자 KPI와 무관했다.
+            임기만이 아니라 KPI 연결 여부도 봐야 할 듯.
+
+  - type: input
+    id: proposal
+    attributes:
+      label: 임계값 제안
+      description: safe_ratio 를 조정해야 한다고 보시면 값과 근거를.
+      placeholder: "0.4 — 인사이동이 잦은 조직이라 더 보수적으로 잡아야 했다"
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 확인
+      options:
+        - label: "이 글만 보고 어느 회사인지 좁혀지지 않는다"
+          required: true
+        - label: "정확한 수치 대신 관계나 범위로 적었다"
+          required: true

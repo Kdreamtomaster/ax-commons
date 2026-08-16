@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# 내 고객사명 검사용. 절대 커밋하지 않는다.
+.private-terms.txt
+
+# 이 폴더 전용 gh 인증 저장소. 절대 커밋하지 않는다.
+.ghconfig/

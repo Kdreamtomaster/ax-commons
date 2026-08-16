@@ -1,0 +1,67 @@
+name: "⑤ 참조 자료 제출 (마진 스프레드 · 신호 해석 규칙)"
+description: "산업별 마진 스프레드나 공개 신호 읽는 법을 보태 주세요."
+title: "[자료] "
+labels: ["reference-data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `owner-lens` 는 **산업 안의 성과 편차**에서 출발합니다. 산업 평균은 아무것도 설명하지 않습니다.
+        그런데 그 스프레드 값을 아무도 안 채워 뒀습니다. 채워 주시면 분석이 날카로워집니다.
+
+        **숫자는 낡습니다.** 출처와 연도를 반드시 함께 적어 주세요.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 무엇을 내시나요
+      options:
+        - "산업 마진 스프레드"
+        - "신호 해석 규칙 (채용공고·공시 읽는 법)"
+        - "폐쇄 자료 → 공개 대체물 대응"
+    validations:
+      required: true
+
+  - type: textarea
+    id: margin
+    attributes:
+      label: 마진 스프레드
+      description: "tuning.md 의 margin_reference 형식. 해당 없으면 비웁니다."
+      render: yaml
+      placeholder: |
+        - industry: "전자부품 제조"
+          year: "2025"
+          source: "한국은행 기업경영분석"
+          operating_margin:
+            top: ""
+            median: ""
+            bottom: ""
+          swing_factors: ["불량 재작업률", "설비 가동률", "수주 예측 정확도"]
+
+  - type: textarea
+    id: signal
+    attributes:
+      label: 신호 해석 규칙
+      description: "무엇을 봤을 때 어떻게 읽는가. 해당 없으면 비웁니다."
+      placeholder: |
+        관찰: 견적 엔지니어 공고가 3개월 이상 열려 있다
+        읽는 법: 수주 대비 견적 인력이 모자란다. 견적 리드타임이 병목일 가능성
+        확신도: 가설
+        왜 그렇게 읽는가: (메커니즘)
+
+  - type: input
+    id: source
+    attributes:
+      label: 출처와 연도
+      description: 이게 없으면 못 씁니다.
+      placeholder: "한국은행 2025년 기업경영분석 / 2025-12 공표"
+    validations:
+      required: true
+
+  - type: input
+    id: scope
+    attributes:
+      label: 적용 범위
+      placeholder: "국내 / 제조업 / 외감 대상 기업 한정 등"
+    validations:
+      required: true
