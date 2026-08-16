@@ -3,7 +3,7 @@
 > ## ⚠️ 전부 가공된 자료입니다
 > 실재하는 어떤 기업·개인과도 관계가 없다.
 
-[`case-04`](../case-04-cross-review/)는 ①③ 둘만 맞붙였다.
+[`case-04`](../case-04-cross-review/01-cross-review.md)는 ①③ 둘만 맞붙였다.
 이번에는 **② 사는 쪽까지 넣어 셋을 다 놓는다.**
 
 목적이 하나 더 있다. [#20](https://github.com/Kdreamtomaster/ax-commons/issues/20)에서

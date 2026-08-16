@@ -3,7 +3,7 @@
 > ## ⚠️ 전부 가공된 자료입니다
 > 실재하는 어떤 기업·개인과도 관계가 없다.
 
-[`case-01`](../case-01-precision-parts/)·[`case-02`](../case-02-proposal-review/)와
+[`case-01`](../case-01-precision-parts/01-analysis.md)·[`case-02`](../case-02-proposal-review/01-review.md)와
 **같은 회사**다. 이번에는 그 시스템을 실제로 쓸 사람 자리에 서 본다.
 
 ---

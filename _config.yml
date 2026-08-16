@@ -28,8 +28,9 @@ plugins:
   - jekyll-sitemap
 
 # 사이트에 올리지 않을 것
+# scripts/ 는 일부러 남긴다. 문서가 스크립트 파일로 링크를 걸고 있어서
+# 빼면 그 링크가 404 가 된다.
 exclude:
-  - scripts/
   - .ghconfig/
   - .private-terms.txt
   - .gitignore
