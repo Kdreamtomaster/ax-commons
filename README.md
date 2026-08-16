@@ -4,6 +4,8 @@
 
 `CC0` · 설치 불필요 · 한국어 원본 · [English below](#english)
 
+**📖 웹으로 읽기 → [kdreamtomaster.github.io/ax-commons](https://kdreamtomaster.github.io/ax-commons/)**
+
 ---
 
 ## 무엇이 나오나
@@ -199,6 +201,10 @@ python scripts/build.py        # dist 전체 재생성
   ([#3](https://github.com/Kdreamtomaster/ax-commons/issues/3) ·
    [#4](https://github.com/Kdreamtomaster/ax-commons/issues/4) ·
    [#5](https://github.com/Kdreamtomaster/ax-commons/issues/5))
+- **실제 업무에서 쓰인 기록이 0건이다.** 한 사람의 경험칙이지 검증된 규칙이 아니다.
+  ([#24](https://github.com/Kdreamtomaster/ax-commons/issues/24))
+- **테스트가 0개다.** 스킬이 규칙대로 동작하는지 보는 검사가 없다.
+  지금 검사기 둘은 글자만 본다. ([#25](https://github.com/Kdreamtomaster/ax-commons/issues/25))
 - 밖에서 본 것은 밖에서 본 것이다. 회사는 안에 들어가야 보인다.
 - 한 사람이 쓰는 원장은 그 사람의 위치에 편중된다.
 

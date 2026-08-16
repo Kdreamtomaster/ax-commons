@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.url != "/" %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f6f7f9; --bg-inset:#eef0f3;
+  --fg:#1a1d21; --fg-soft:#5b636d; --fg-faint:#8a919b;
+  --line:#e2e5e9; --line-soft:#eceef1;
+  --accent:#1f6feb; --accent-soft:#ddebff;
+  --warn:#9a6700; --warn-bg:#fff8c5;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"D2Coding","Nanum Gothic Coding",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",Roboto,sans-serif;
+  --sidebar:16.5rem;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0d1117; --bg-soft:#161b22; --bg-inset:#1c2128;
+    --fg:#e6edf3; --fg-soft:#9198a1; --fg-faint:#6e7681;
+    --line:#2a313a; --line-soft:#21262d;
+    --accent:#58a6ff; --accent-soft:#132b50;
+    --warn:#d29922; --warn-bg:#2b2413;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--sans); font-size:16px; line-height:1.75;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:.6rem 1rem;z-index:99}
+.skip:focus{left:0}
+
+/* ---------- 뼈대 ---------- */
+.shell{display:flex; min-height:100vh; align-items:flex-start}
+.side{
+  width:var(--sidebar); flex:0 0 var(--sidebar);
+  border-right:1px solid var(--line); background:var(--bg-soft);
+  position:sticky; top:0; height:100vh; overflow-y:auto; padding:1.4rem 0 3rem;
+}
+.main{flex:1 1 auto; min-width:0; padding:2.6rem 3rem 6rem; max-width:56rem}
+
+/* ---------- 사이드바 ---------- */
+.brand{display:block; padding:0 1.4rem 1.1rem; border-bottom:1px solid var(--line-soft); margin-bottom:1rem}
+.brand b{display:block; font-size:1.15rem; letter-spacing:-.01em; color:var(--fg)}
+.brand span{display:block; font-size:.78rem; color:var(--fg-faint); margin-top:.25rem; line-height:1.5}
+.brand:hover{text-decoration:none}
+.nav-group{margin:0 0 1.15rem}
+.nav-group > p{
+  margin:0 0 .35rem; padding:0 1.4rem;
+  font-size:.7rem; font-weight:700; letter-spacing:.08em;
+  color:var(--fg-faint); text-transform:uppercase;
+}
+.nav-group a{
+  display:block; padding:.34rem 1.4rem; font-size:.9rem; color:var(--fg-soft);
+  border-left:2px solid transparent;
+}
+.nav-group a:hover{background:var(--bg-inset); color:var(--fg); text-decoration:none}
+.nav-group a[aria-current="page"]{
+  color:var(--accent); font-weight:600;
+  border-left-color:var(--accent); background:var(--accent-soft);
+}
+.side-foot{padding:1rem 1.4rem 0; margin-top:1.2rem; border-top:1px solid var(--line-soft); font-size:.82rem}
+.side-foot a{display:block; padding:.22rem 0; color:var(--fg-soft)}
+
+/* ---------- 본문 ---------- */
+.main h1,.main h2,.main h3,.main h4{line-height:1.35; letter-spacing:-.015em}
+.main h1{font-size:2rem; margin:0 0 1.4rem; padding-bottom:.7rem; border-bottom:1px solid var(--line)}
+.main h2{font-size:1.4rem; margin:2.8rem 0 .9rem; padding-top:.4rem}
+.main h3{font-size:1.1rem; margin:2rem 0 .6rem}
+.main h4{font-size:.98rem; margin:1.5rem 0 .5rem; color:var(--fg-soft)}
+.main p,.main li{font-size:1rem}
+.main ul,.main ol{padding-left:1.35rem}
+.main li{margin:.3rem 0}
+.main li>ul,.main li>ol{margin:.3rem 0}
+.main hr{border:0; border-top:1px solid var(--line); margin:2.6rem 0}
+.main blockquote{
+  margin:1.4rem 0; padding:.85rem 1.1rem; border-left:3px solid var(--accent);
+  background:var(--bg-soft); border-radius:0 6px 6px 0; color:var(--fg-soft);
+}
+.main blockquote > :first-child{margin-top:0}
+.main blockquote > :last-child{margin-bottom:0}
+.main strong{font-weight:700; color:var(--fg)}
+
+code{
+  font-family:var(--mono); font-size:.86em;
+  background:var(--bg-inset); padding:.14em .38em; border-radius:4px;
+  word-break:break-all;
+}
+pre{
+  background:var(--bg-inset); border:1px solid var(--line); border-radius:8px;
+  padding:1rem 1.1rem; overflow-x:auto; line-height:1.62; font-size:.86rem;
+}
+pre code{background:none; padding:0; font-size:1em; word-break:normal; white-space:pre}
+
+.tablewrap{overflow-x:auto; margin:1.3rem 0; border:1px solid var(--line); border-radius:8px}
+.main table{border-collapse:collapse; width:100%; font-size:.9rem; margin:0}
+.main th,.main td{padding:.6rem .85rem; border-bottom:1px solid var(--line-soft); text-align:left; vertical-align:top}
+.main th{background:var(--bg-soft); font-weight:700; white-space:nowrap}
+.main tbody tr:last-child td{border-bottom:0}
+.main td code{white-space:nowrap}
+
+/* ---------- 첫 화면 전용 ---------- */
+.hero{margin:0 0 3rem}
+.hero h1{font-size:2.55rem; border:0; padding:0; margin:0 0 .8rem; letter-spacing:-.03em}
+.hero .lede{font-size:1.16rem; color:var(--fg-soft); margin:0 0 1.5rem; line-height:1.65}
+.badges{display:flex; flex-wrap:wrap; gap:.45rem; margin:0 0 1.8rem}
+.badges span{
+  font-size:.78rem; padding:.28rem .7rem; border-radius:999px;
+  background:var(--bg-inset); color:var(--fg-soft); border:1px solid var(--line);
+}
+.cta{display:flex; flex-wrap:wrap; gap:.6rem}
+.btn{
+  display:inline-block; padding:.62rem 1.15rem; border-radius:7px;
+  font-size:.94rem; font-weight:600; border:1px solid var(--line);
+  background:var(--bg-soft); color:var(--fg);
+}
+.btn:hover{text-decoration:none; border-color:var(--accent); color:var(--accent)}
+.btn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+.btn.primary:hover{opacity:.88; color:#fff}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1rem; margin:1.4rem 0}
+.card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg-soft)}
+.card h3{margin:0 0 .45rem; font-size:1rem}
+.card p{margin:0; font-size:.9rem; color:var(--fg-soft); line-height:1.65}
+
+.notice{
+  border:1px solid var(--line); border-left:3px solid var(--warn);
+  background:var(--warn-bg); border-radius:0 8px 8px 0;
+  padding:.9rem 1.15rem; margin:1.6rem 0; font-size:.93rem;
+}
+.notice > :first-child{margin-top:0}
+.notice > :last-child{margin-bottom:0}
+
+/* ---------- 이슈 목록 ---------- */
+#issues{margin:1.2rem 0}
+#issues ol{list-style:none; padding:0; margin:0; border:1px solid var(--line); border-radius:8px; overflow:hidden}
+#issues li{border-bottom:1px solid var(--line-soft); padding:.7rem 1rem; font-size:.92rem}
+#issues li:last-child{border-bottom:0}
+#issues .num{font-family:var(--mono); font-size:.82rem; color:var(--fg-faint); margin-right:.5rem}
+#issues .lbl{
+  display:inline-block; font-size:.7rem; padding:.1rem .5rem; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); margin-left:.4rem; white-space:nowrap;
+}
+#issues .state{color:var(--fg-faint); font-size:.88rem; padding:.8rem 0}
+
+/* ---------- 페이지 발 ---------- */
+.pagefoot{
+  margin-top:4rem; padding-top:1.4rem; border-top:1px solid var(--line);
+  font-size:.86rem; color:var(--fg-faint); display:flex; flex-wrap:wrap; gap:1rem;
+  justify-content:space-between; align-items:center;
+}
+.pagefoot a{color:var(--fg-soft)}
+
+/* ---------- 모바일 ---------- */
+.menu-btn{display:none}
+@media (max-width:900px){
+  .shell{display:block}
+  .side{
+    position:static; width:auto; height:auto; border-right:0;
+    border-bottom:1px solid var(--line); padding:1rem 0;
+  }
+  .main{padding:1.8rem 1.15rem 4rem; max-width:none}
+  .hero h1{font-size:1.95rem}
+  .hero .lede{font-size:1.03rem}
+  .menu-btn{
+    display:block; margin:0 1.4rem; width:calc(100% - 2.8rem);
+    padding:.55rem .9rem; font:inherit; font-size:.9rem; text-align:left;
+    background:var(--bg-inset); color:var(--fg-soft);
+    border:1px solid var(--line); border-radius:7px; cursor:pointer;
+  }
+  #navlist{display:none; margin-top:1rem}
+  #navlist.open{display:block}
+  .main h1{font-size:1.7rem}
+}
+@media print{ .side,.pagefoot{display:none} .main{max-width:none;padding:0} }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">본문으로 건너뛰기</a>
+
+<div class="shell">
+  <nav class="side" aria-label="사이트 차례">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <b>ax-commons</b>
+      <span>공개된 신호만으로 회사를 읽는 AI 도구 모음</span>
+    </a>
+
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="navlist">차례 열기</button>
+
+    <div id="navlist">
+      {% for g in site.nav %}
+      <div class="nav-group">
+        <p>{{ g.group }}</p>
+        {% for it in g.items %}
+        {% assign target = it.url | relative_url %}
+        <a href="{{ target }}"{% if page.url == it.url %} aria-current="page"{% endif %}>{{ it.text }}</a>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+      <div class="side-foot">
+        <a href="https://github.com/{{ site.repository }}">GitHub 저장소 →</a>
+        <a href="https://github.com/{{ site.repository }}/issues">열린 이슈 →</a>
+        <a href="https://github.com/{{ site.repository }}/discussions">디스커션 →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main" id="content">
+    {{ content }}
+
+    <div class="pagefoot">
+      <span>CC0 1.0 · 퍼블릭 도메인</span>
+      <span>
+        <a href="https://github.com/{{ site.repository }}/edit/main/{{ page.path }}">이 문서 고치기</a>
+        ·
+        <a href="https://github.com/{{ site.repository }}/issues/new/choose">틀린 곳 알리기</a>
+      </span>
+    </div>
+  </main>
+</div>
+
+<script>
+// 표가 좁은 화면에서 옆으로 넘칠 때 표만 따로 스크롤되게 감싼다.
+document.querySelectorAll('.main table').forEach(function (t) {
+  if (t.parentElement.classList.contains('tablewrap')) return;
+  var w = document.createElement('div');
+  w.className = 'tablewrap';
+  t.parentNode.insertBefore(w, t);
+  w.appendChild(t);
+});
+
+// 모바일 차례 여닫기
+var mb = document.getElementById('menu-btn'), nl = document.getElementById('navlist');
+if (mb && nl) {
+  mb.addEventListener('click', function () {
+    var open = nl.classList.toggle('open');
+    mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mb.textContent = open ? '차례 닫기' : '차례 열기';
+  });
+}
+</script>
+{% if page.issue_feed %}
+<script>
+// 열린 이슈를 GitHub 에서 직접 받아 온다. 인증이 없어 IP 당 시간당 60회 제한이 있다.
+// 실패하면 조용히 링크만 남긴다.
+(function () {
+  var box = document.getElementById('issues');
+  if (!box) return;
+  var api = 'https://api.github.com/repos/{{ site.repository }}/issues?state=open&per_page=8&sort=created&direction=desc';
+  fetch(api, { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (rows) {
+      rows = rows.filter(function (x) { return !x.pull_request; });
+      if (!rows.length) { box.innerHTML = '<p class="state">열린 이슈가 없다.</p>'; return; }
+      var ol = document.createElement('ol');
+      rows.forEach(function (x) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = x.html_url; a.textContent = x.title;
+        var n = document.createElement('span');
+        n.className = 'num'; n.textContent = '#' + x.number;
+        li.appendChild(n); li.appendChild(a);
+        (x.labels || []).forEach(function (l) {
+          if (l.name !== '첫걸음' && l.name !== 'good first issue') return;
+          var s = document.createElement('span');
+          s.className = 'lbl'; s.textContent = l.name;
+          li.appendChild(s);
+        });
+        ol.appendChild(li);
+      });
+      box.innerHTML = ''; box.appendChild(ol);
+    })
+    .catch(function () {
+      box.innerHTML = '<p class="state">지금은 목록을 받아오지 못했다. ' +
+        '<a href="https://github.com/{{ site.repository }}/issues">GitHub 에서 바로 보기 →</a></p>';
+    });
+})();
+</script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,65 @@
+# GitHub Pages 설정
+#
+# 이 파일 하나 + _layouts/default.html + index.md 만으로 사이트가 된다.
+# 별도 설치도, GitHub Actions 도 필요 없다. GitHub 이 알아서 빌드한다.
+#
+# 아래 플러그인들은 GitHub Pages 가 기본으로 켜 두는 것들이다.
+# 덕분에 기존 마크다운 파일에 front matter 를 하나도 안 붙여도 된다.
+
+title: ax-commons
+description: 고객사 안에 들어가 보기 전에, 공개된 신호만으로 그 회사를 읽는 AI 도구 모음
+lang: ko
+
+url: https://kdreamtomaster.github.io
+baseurl: /ax-commons
+
+repository: Kdreamtomaster/ax-commons
+
+plugins:
+  - jekyll-optional-front-matter   # front matter 없는 .md 도 페이지로 만든다
+  - jekyll-relative-links          # [글](FILE.md) 링크를 사이트 주소로 바꾼다
+  - jekyll-titles-from-headings    # 문서 첫 줄의 # 제목을 페이지 제목으로 쓴다
+  - jekyll-default-layout          # layout 을 안 적어도 default 를 쓴다
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 사이트에 올리지 않을 것
+exclude:
+  - scripts/
+  - .ghconfig/
+  - .private-terms.txt
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  - README.md          # 사이트 첫 화면은 index.md 가 맡는다
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# 사이드바 차례. 여기만 고치면 사이트 전체 메뉴가 바뀐다.
+nav:
+  - group: 시작
+    items:
+      - { text: 무엇이 나오나,    url: / }
+      - { text: 설계 철학,        url: /PHILOSOPHY.html }
+      - { text: 예시 5건,         url: /examples/ }
+  - group: 쓰기
+    items:
+      - { text: 윈도우,           url: /docs/install-windows.html }
+      - { text: 맥,               url: /docs/install-macos.html }
+      - { text: 리눅스,           url: /docs/install-linux.html }
+  - group: 참여
+    items:
+      - { text: 기여하기,         url: /CONTRIBUTING.html }
+      - { text: 행동 규칙,        url: /CODE_OF_CONDUCT.html }
+      - { text: 용어집,           url: /docs/glossary.html }
+  - group: 운영
+    items:
+      - { text: 지금 어디쯤 왔나, url: /MATURITY.html }
+      - { text: 누가 정하나,      url: /GOVERNANCE.html }
+      - { text: 왜 이렇게 됐나,   url: /DECISIONS.html }
+      - { text: 답 없는 질문,     url: /docs/open-questions.html }

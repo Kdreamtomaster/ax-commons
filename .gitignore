@@ -11,3 +11,8 @@ Thumbs.db
 
 # 이 폴더 전용 gh 인증 저장소. 절대 커밋하지 않는다.
 .ghconfig/
+
+# Jekyll 로컬 빌드 산출물
+_site/
+.jekyll-cache/
+.jekyll-metadata

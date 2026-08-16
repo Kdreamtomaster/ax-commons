@@ -37,8 +37,8 @@ Apache 소프트웨어 재단의 [Project Maturity Model](https://community.apac
 | ✅ | 설치 없이 바로 쓸 수 있다 |
 | ✅ | 8개 플랫폼 배포본이 하나의 원본에서 생성된다 |
 | ✅ | 가공 데이터 예시 5건이 있다 |
-| ❌ | **실제 업무에서 쓰인 기록이 0건이다** |
-| ❌ | 임기 게이트 `0.6` 같은 핵심 상수가 경험칙이다 |
+| ❌ | **실제 업무에서 쓰인 기록이 0건이다** → [#24](https://github.com/Kdreamtomaster/ax-commons/issues/24) |
+| ❌ | 임기 게이트 `0.6` 같은 핵심 상수가 경험칙이다 → [#1](https://github.com/Kdreamtomaster/ax-commons/issues/1) |
 
 미검증 항목은 전부 [이슈로 열려 있다](https://github.com/Kdreamtomaster/ax-commons/issues).
 
@@ -58,8 +58,13 @@ Apache 소프트웨어 재단의 [Project Maturity Model](https://community.apac
 | ✅ | `scan-private.py` 로 비식별화를 기계 검사 |
 | ✅ | `build.py --check` 로 배포본 어긋남을 잡는다 |
 | ✅ | 한계를 README 첫 화면에서 밝힌다 |
+| ❌ | **테스트가 0개다.** 스킬이 규칙대로 동작하는지 보는 검사가 없다 → [#25](https://github.com/Kdreamtomaster/ax-commons/issues/25) |
 | ⚠️ | **용어 일관성 검사기가 없다** → [#23](https://github.com/Kdreamtomaster/ax-commons/issues/23) |
 | ⚠️ | CI가 없다. 검사를 사람이 손으로 돌린다 |
+
+지금 있는 검사 둘은 **글자만 본다.**
+`build.py --check` 는 8벌이 원본과 같은지, `scan-private.py` 는 금칙어가 있는지 본다.
+**둘 다 통과해도 스킬이 엉뚱하게 답하는 것은 안 걸린다.**
 
 ### 공동체 🔴 — 가장 약하다
 
