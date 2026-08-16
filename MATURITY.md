@@ -38,7 +38,7 @@ Apache 소프트웨어 재단의 [Project Maturity Model](https://community.apac
 | ✅ | 8개 플랫폼 배포본이 하나의 원본에서 생성된다 |
 | ✅ | 가공 데이터 예시 5건이 있다 |
 | ❌ | **실제 업무에서 쓰인 기록이 0건이다** → [#24](https://github.com/Kdreamtomaster/ax-commons/issues/24) |
-| ❌ | 임기 게이트 `0.6` 같은 핵심 상수가 경험칙이다 → [#1](https://github.com/Kdreamtomaster/ax-commons/issues/1) |
+| ❌ | 시나리오 게이트 `0.6` 같은 핵심 상수가 경험칙이다 → [#1](https://github.com/Kdreamtomaster/ax-commons/issues/1) |
 
 미검증 항목은 전부 [이슈로 열려 있다](https://github.com/Kdreamtomaster/ax-commons/issues).
 

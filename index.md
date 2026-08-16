@@ -43,9 +43,10 @@ issue_feed: true
 재구성한 상대와의 일치는 정보가 아니다.
 **어긋남만 정보고, 그 어긋남이 진짜 상대에게 물을 질문이 된다.**
 
-안건마다 이런 질문도 함께 나온다 — *"담당하실 분이 이 결과를 보실 수 있는 구조인가요?"*
-회수 기간이 결정하는 사람의 시간 지평을 넘으면 기술적으로 옳아도 멈추기 때문이다.
-잔여 임기는 모르는 게 보통이라, 모르면 판정하지 않고 이 질문을 그대로 낸다.
+그리고 안건마다 마지막에 이걸 본다 — **의사결정진이 바뀌어도 이 안건이 성립하는가.**
+보도자료·산업 트렌드·뉴스로 오너십 전환 시나리오를 여러 개 만들어 논거를 부딪친다.
+사람은 채널이자 주체이지 논거가 아니다. 특정 인물의 임기나 성향 위에 안건을 세우면
+그 사람과 함께 안건이 죽는다.
 
 전체 산출은 [예시 5건]({{ '/examples/' | relative_url }})에 있다. 전부 가공 데이터다.
 
@@ -134,7 +135,7 @@ issue_feed: true
 그리고 **테스트가 0개다.** 스킬이 규칙대로 동작하는지 보는 검사가 없다.
 </div>
 
-- 임기 게이트 임계값 `0.6` 은 경험칙이다 ([#1](https://github.com/Kdreamtomaster/ax-commons/issues/1))
+- 시나리오 게이트의 임계값 `0.6` 은 경험칙이다 ([#1](https://github.com/Kdreamtomaster/ax-commons/issues/1))
 - 실사용 보고가 아직 없다 ([#24](https://github.com/Kdreamtomaster/ax-commons/issues/24))
 - 동작 검사기가 없다 ([#25](https://github.com/Kdreamtomaster/ax-commons/issues/25))
 - 로컬 모델 성능표는 추정이다 ([#2](https://github.com/Kdreamtomaster/ax-commons/issues/2))

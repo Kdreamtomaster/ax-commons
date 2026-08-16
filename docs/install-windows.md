@@ -133,7 +133,7 @@ cd /mnt/c/Users/사용자이름/Downloads/ax-commons-main
 
 ## 5단계 · 직접 고쳐 쓰기
 
-임기 게이트 임계값이나 내 회사 정보를 넣고 싶으면:
+시나리오 게이트 임계값이나 내 회사 정보를 넣고 싶으면:
 
 1. `skills\owner-lens\references\tuning.md` 를 메모장으로 연다
 2. 값을 채운다

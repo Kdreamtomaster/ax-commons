@@ -30,9 +30,10 @@
 내 시각과 맞붙인다. 재구성한 상대와의 일치는 정보가 아니다.
 **어긋남만 정보고, 그 어긋남이 진짜 상대에게 물을 질문이 된다.**
 
-안건마다 이런 질문도 함께 나온다 — *"담당하실 분이 이 결과를 보실 수 있는 구조인가요?"*
-회수 기간이 결정하는 사람의 시간 지평을 넘으면 기술적으로 옳아도 멈추기 때문이다.
-잔여 임기는 모르는 게 보통이라, 모르면 판정하지 않고 이 질문을 그대로 낸다.
+그리고 안건마다 마지막에 이걸 본다 — **의사결정진이 바뀌어도 이 안건이 성립하는가.**
+보도자료·산업 트렌드·뉴스로 오너십 전환 시나리오를 여러 개 만들어 논거를 부딪친다.
+사람은 채널이자 주체이지 논거가 아니다. 특정 인물의 임기나 성향 위에 안건을 세우면
+그 사람과 함께 안건이 죽는다. 어느 시나리오에서도 성립하는 비즈니스 논리로 세운다.
 
 전체 산출은 [예시](examples/)에 5건 있다. 전부 가공 데이터다.
 
@@ -90,7 +91,7 @@ FDE는 파는 쪽·사는 쪽·일하는 쪽을 **다 오간다.** 그래서 이
 
 ### 도구 1 · owner-lens — 오너의 렌즈
 
-공개 신호로 회사의 목적함수를 역설계하고, 임기 게이트로 판정한다.
+공개 신호로 회사의 목적함수를 역설계하고, 시나리오 게이트로 판정한다.
 **처음에 묻는 건 딱 하나다. 어느 쪽에 서 계신가요?**
 
 > AX = AI Transformation. DX(디지털 전환)의 다음 단계로 쓰는 말이다.
@@ -187,7 +188,7 @@ python scripts/build.py        # dist 전체 재생성
 
 | | |
 |---|---|
-| **고쳐도 됨** | 임기 게이트 임계값 · 출력 언어와 분량 · 산업 마진 참조 · 신호 해석 규칙 |
+| **고쳐도 됨** | 시나리오 게이트 임계값·시나리오 구성 · 출력 언어와 분량 · 산업 마진 참조 · 신호 해석 규칙 |
 | **고치면 다른 도구가 됨** | 뻔한 답 게이트 · 근거 등급 표기 · `[불가]` 판정 필수 · "남은 모름" 필수 · 반박 안내 필수 · 탈식별화 점검 |
 
 아래쪽까지 고치는 것도 자유다. 다만 **다른 이름을 붙이기 바란다.**
@@ -198,7 +199,7 @@ python scripts/build.py        # dist 전체 재생성
 
 ## 한계 — 먼저 밝힌다
 
-- **임기 게이트 임계값 0.6은 경험칙이지 검증된 값이 아니다.** ([#1](https://github.com/Kdreamtomaster/ax-commons/issues/1))
+- **시나리오 게이트의 임계값 0.6(필요 지평 계산)은 경험칙이지 검증된 값이 아니다.** ([#1](https://github.com/Kdreamtomaster/ax-commons/issues/1))
 - **검증 등급 기준(2회 잠정, 3회 확인)도 통계적 유의성이 아니다.** (Q8 — 데이터가 모이면 연다)
 - **로컬 모델 크기별 성능표는 추정이다.** 실측이 아니다. ([#2](https://github.com/Kdreamtomaster/ax-commons/issues/2))
 - **Hermes·OpenClaw·Codex 연동은 공식 문서만 보고 썼다.** 직접 돌려보지 않았다.
@@ -237,7 +238,7 @@ python scripts/build.py        # dist 전체 재생성
 #2   Ollama 로 모델 하나 돌려보고 규칙을 지켰는지 체크박스만 채우기
 #3   Hermes Agent 를 쓰신다면 문서대로 되는지 확인
 #4   OpenClaw 를 쓰신다면 스킬 경로가 맞는지 확인
-#5   Codex 에 AGENTS.md 붙이고 "임기 게이트 계산해 줘" 물어보기
+#5   Codex 에 AGENTS.md 붙이고 "시나리오 게이트 돌려 줘" 물어보기
 #19  대립 검토에 절 하나 추가 — 고칠 파일이 정해져 있다
 ```
 
@@ -250,7 +251,7 @@ python scripts/build.py        # dist 전체 재생성
 | **3** | 문서·규칙·어댑터 고치기 | PR |
 
 **1번이 가장 값지다.** 이 저장소에는 아직 검증되지 않은 값이 여럿 있다.
-특히 [**임기 게이트 임계값 0.6**](https://github.com/Kdreamtomaster/ax-commons/issues/1)은
+특히 [**시나리오 게이트의 임계값 0.6**](https://github.com/Kdreamtomaster/ax-commons/issues/1)은
 경험칙이지 실측이 아니다.
 
 > **틀렸다는 보고가 맞았다는 보고보다 값지다.** 조건을 좁힐 수 있게 해 주기 때문이다.
@@ -337,10 +338,13 @@ issue** — from published interviews, filings, and industry coverage — and pu
 the views against each other. Agreement with a reconstructed counterpart means
 little; the disagreements become the questions you ask the real one.
 
-One question ships with every issue: *will the sponsor still be around when
-this pays back?* Payback that outlasts the decision maker's horizon kills
-technically correct proposals. Tenure is usually unknown — so instead of
-guessing a number, the tool hands you the question itself.
+And every issue faces one final test: **does the case still stand when the
+decision makers change?** The tool builds several ownership-transition
+scenarios from press releases, industry trends, and news, then stress-tests
+each argument against them. People are channels and agents, never the
+argument — the moment a case rests on one person's tenure or disposition,
+it dies with that person. Cases must rest on business logic that holds in
+any scenario.
 
 Five worked examples are in [`examples/`](examples/). All fabricated data.
 
