@@ -208,6 +208,9 @@ python scripts/build.py        # dist 전체 재생성
 이 한계들을 숨기지 않는 것이 이 프로젝트의 방식이다.
 산출물에 「반박 안내」를 붙이는 것과 같은 논리로, 저장소도 자기 약한 고리를 공개해 둔다.
 
+**프로젝트 자체의 상태도 같은 방식으로 적어 두었다.** → [MATURITY.md](MATURITY.md)
+지금 참여자는 1명이고, 실사용 보고는 0건이다.
+
 ---
 
 ## 기여
@@ -262,6 +265,29 @@ python scripts/build.py        # dist 전체 재생성
 
 ---
 
+## 어떻게 운영되나
+
+혼자 시작한 프로젝트라 **누가 무엇을 정하는지 미리 적어 두었다.**
+Apache 인큐베이터 방식에서 쓸 만한 것만 골라 왔다.
+
+| 문서 | 무엇 |
+|---|---|
+| [MATURITY.md](MATURITY.md) | **지금 어디쯤 와 있나** — 항목별 자기평가와 알려진 위험 |
+| [GOVERNANCE.md](GOVERNANCE.md) | **누가 정하나** — 게으른 합의, 72시간 규칙, 커밋 권한 얻는 법 |
+| [DECISIONS.md](DECISIONS.md) | **왜 이렇게 되어 있나** — 지금까지의 결정과 그때 버린 것 |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | **반박과 공격을 어떻게 가르나** |
+
+세 가지만 알면 된다.
+
+- **되돌릴 수 있는 것은 그냥 고쳐서 PR을 보낸다.** 허락을 먼저 구하지 않는다
+- **용어·기본값·구조를 바꾸는 것은 이슈를 열고 사흘 기다린다**
+- **[도구의 성격을 바꾸는 것](#고쳐도-되는-것--안-되는-것)은 근거 있는 반대가 하나만 있어도 멈춘다**
+
+> **판단에는 최종 판정자가 없다.** 처음 온 사람이 반례를 대면 그게 이긴다.
+> **병합에는 판정자가 있다.** 이 둘을 섞지 않는 것이 이 프로젝트의 운영 원칙이다.
+
+---
+
 ## 라이선스
 
 [CC0 1.0](LICENSE) — 퍼블릭 도메인.
@@ -286,11 +312,13 @@ Give it job postings, filings, and news. Among other things, you get this:
 
 Counterpart: VP of Production · hired externally 2024 · ~1 yr remaining [hypothesis]
 
-| Intervention             | Payback | Remaining | Verdict                      |
-|--------------------------|---------|-----------|------------------------------|
-| Automate shift reporting | 0.5 yr  | 1 yr      | ✅ sellable                   |
-| Inventory visibility     | 1.5 yr  | 1 yr      | ⚠️ successor risk             |
-| Quoting system           | 2 yr+   | 1 yr      | ❌ not at this person's level |
+| Intervention             | Payback | Remaining | Verdict                        |
+|--------------------------|---------|-----------|--------------------------------|
+| Automate shift reporting | 0.5 yr  | 1 yr      | ✅ clears the gate              |
+| Inventory visibility     | 1.5 yr  | 1 yr      | ⚠️ successor risk               |
+| Quoting system           | 2 yr+   | 1 yr      | ❌ not at this approval level   |
+
+1 clears, 2 don't. Not everything passed, so it doesn't get recomputed.
 ```
 
 A technically correct proposal dies when its payback outlasts the sponsor's tenure.
