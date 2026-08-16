@@ -123,12 +123,21 @@ templates/
 
 ## English
 
-**insight-commons** turns individual field experience into knowledge others can
-actually use — and checks whether someone else's knowledge transfers to your
-conditions before you adopt it.
+**insight-commons** turns field experience into knowledge other people can
+check, and tells you whether someone else's hard-won lesson actually applies to
+your situation before you act on it.
 
-Core rule: **someone else's `[confirmed]` is your `[unverified]`.**
-Three confirmations in their conditions do not carry over to yours.
+One rule runs through everything:
 
-Counterexamples are never deleted — they narrow the conditions instead.
-An entry without a stated *mechanism* can be recorded but never transferred.
+> **Someone else's `[confirmed]` is your `[unverified]`.**
+
+Three confirmations under their conditions don't carry over to yours. Adopting
+a lesson starts at zero and works its way up again.
+
+Two more rules do most of the work:
+
+- **Counterexamples are never deleted.** They narrow the conditions instead, which
+  usually makes the entry more accurate than it was.
+- **An entry with no stated mechanism can be recorded but never passed on.**
+  A correlation nobody can explain breaks the moment conditions change, and you
+  won't know why.

@@ -186,23 +186,52 @@ python scripts/build.py        # dist 전체 재생성
 
 ## English
 
-**ax-commons** gives customers and frontline workers the tools to judge AI
-transformation proposals for themselves — without the closed datasets that
-consultancies gate access behind.
+**ax-commons helps the people closest to the work judge AI-transformation
+proposals for themselves.**
 
-Two skills:
+Three groups shape an AI transformation: the vendor, the internal task force,
+and the people who actually do the work. Each knows something the others don't,
+and **the people doing the work know it best.** They know where time leaks,
+which exceptions keep coming up, and what never makes it into the system at all.
+Decisions improve when that knowledge reaches the table.
 
-- **owner-lens** reverse-engineers a company's objectives from public signals
-  (job postings, filings, news), then checks whether a proposed intervention
-  pays back **within the decision maker's remaining tenure**.
-- **insight-commons** turns individual field experience into knowledge others
-  can verify and reuse. Core rule: *someone else's `[confirmed]` is your `[unverified]`.*
+The evidence usually doesn't reach it. Due-diligence reports and industry
+benchmarks sit behind a paywall or a contract, so understanding your own company
+often means paying someone else to do it. This repo opens a second route:
+**judge from public signals alone.**
 
-Design principle: **create no authority.** Every output ships with a source
-ledger, a verification log, what it failed to determine, and — most importantly —
-**a guide to refuting it.**
+### Two skills
 
-Works anywhere. Start by pasting [`prompts/system-prompt-full.md`](prompts/system-prompt-full.md)
-into any AI chat. Platform-specific packages are in [`dist/`](dist/).
+**owner-lens** reconstructs a company's objectives from public signals — job
+postings, filings, news — then asks whether a proposed change pays back
+**within the decision maker's remaining tenure.** That question stops more good
+proposals than any technical objection, and almost no analysis asks it.
 
-CC0. Take it, fork it, sell it. Reproducibility is the point.
+**insight-commons** turns field experience into knowledge other people can check.
+One rule runs through it:
+
+> **Someone else's `[confirmed]` is your `[unverified]`.**
+
+Three confirmations under their conditions don't carry over to yours.
+Counterexamples are never deleted; they narrow the conditions instead.
+
+### The guiding principle: don't manufacture authority
+
+An output that carries authority is hard to question. Part of what makes expert
+reports persuasive is that they don't show their sources — if you can't check the
+work, you can only accept it. This goes the other way. Every output ships with a
+source ledger, a verification log, a plain list of what it couldn't determine,
+and **a guide to arguing against it.**
+
+Point at your own weak spots first, or the tool becomes one more authority.
+
+### Getting started
+
+Paste [`prompts/system-prompt-full.md`](prompts/system-prompt-full.md) into any
+AI chat. No install, no account. Packages for Claude, Codex, OpenClaw, Hermes
+Agent, and local models under 30B are in [`dist/`](dist/).
+
+Written in Korean first; the English here is a summary, not a full translation
+([#9](https://github.com/Kdreamtomaster/ax-commons/issues/9)).
+
+**CC0 — public domain.** Fork it, change it, sell it. Easy reuse is the point.

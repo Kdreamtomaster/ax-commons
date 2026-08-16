@@ -157,12 +157,17 @@ templates/
 
 ## English
 
-**owner-lens** is a Claude skill that reverse-engineers a prospect company's
-owner-level objectives from public signals alone (job postings, filings, news),
-then checks whether any proposed intervention pays back **within the decision
-maker's remaining tenure** — a gate most business-analysis prompts ignore.
+**owner-lens** reconstructs what a company's leadership is actually optimizing
+for, using nothing but public signals — job postings, filings, news. It then
+asks a question most business analysis skips: does this change pay back **within
+the decision maker's remaining tenure?**
 
-Built for B2B pre-sales people who never get to meet the owner.
-Interactive: it asks a little, drafts something wrong, and lets you correct it.
+Built for people who have to understand a company from the outside. Six modes
+cover the vendor, the internal task force, and the people doing the work, so it
+isn't only a selling tool.
 
-Set your own values in `references/tuning.md`. Everything else is method.
+It works by conversation. It asks for very little, drafts something rough on
+purpose, and lets you correct it — most people find fixing a wrong draft far
+easier than filling in a blank form.
+
+Set your own numbers in `references/tuning.md`. Everything else is method.
