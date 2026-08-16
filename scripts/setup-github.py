@@ -77,7 +77,7 @@ ISSUES = [
         labels=["verification", "models", "help wanted"],
         body=f"""\
 `dist/local-models/README.md` 의 크기별 성능표는 **추정이다.**
-"7~9B는 등급 표기를 자주 빠뜨린다" 같은 문장도 근거 없이 썼다.
+"7~9B는 등급 표기를 자주 놓친다" 같은 문장도 근거 없이 썼다.
 
 ### 채점 기준 — 답변 품질이 아니라 규칙 준수를 본다
 
@@ -197,7 +197,7 @@ Codex에게 이렇게 물어본다.
 ```yaml
 - industry: ""
   year: ""
-  source: ""          # 이게 없으면 못 쓴다
+  source: ""          # 이게 없으면 실무에 쓰기 어렵다
   operating_margin:
     top: ""
     median: ""
