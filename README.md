@@ -136,12 +136,21 @@ python scripts/build.py        # dist 전체 재생성
 
 ## 한계 — 먼저 밝힌다
 
-- **임기 게이트 임계값 0.6은 경험칙이지 검증된 값이 아니다.** 실제 결과로 조정해야 한다.
-- **검증 등급 기준(2회 잠정, 3회 확인)도 통계적 유의성이 아니다.**
+- **임기 게이트 임계값 0.6은 경험칙이지 검증된 값이 아니다.** ([#1](https://github.com/Kdreamtomaster/ax-commons/issues/1))
+- **검증 등급 기준(2회 잠정, 3회 확인)도 통계적 유의성이 아니다.** (Q8 — 데이터가 모이면 연다)
+- **로컬 모델 크기별 성능표는 추정이다.** 실측이 아니다. ([#2](https://github.com/Kdreamtomaster/ax-commons/issues/2))
+- **Hermes·OpenClaw·Codex 연동은 공식 문서만 보고 썼다.** 직접 돌려보지 않았다.
+  ([#3](https://github.com/Kdreamtomaster/ax-commons/issues/3) ·
+   [#4](https://github.com/Kdreamtomaster/ax-commons/issues/4) ·
+   [#5](https://github.com/Kdreamtomaster/ax-commons/issues/5))
 - 밖에서 본 것은 밖에서 본 것이다. 회사는 안에 들어가야 보인다.
 - 한 사람이 쓰는 원장은 그 사람의 위치에 편중된다.
 
+**모르는 것을 이슈로 열어 두었다.** → [docs/open-questions.md](docs/open-questions.md) ·
+[열린 이슈 전체](https://github.com/Kdreamtomaster/ax-commons/issues)
+
 이 한계들을 숨기지 않는 것이 이 프로젝트의 방식이다.
+산출물에 「반박 안내」를 붙이는 것과 같은 논리로, 저장소도 자기 약한 고리를 공개해 둔다.
 
 ---
 

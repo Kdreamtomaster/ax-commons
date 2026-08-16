@@ -6,7 +6,29 @@
 각 항목에 **무엇이 관찰되면 결론이 나는지**를 함께 적었다.
 그게 없으면 영원히 "검토 중"으로 남는다.
 
-이 목록은 그대로 깃헙 이슈가 된다. → `python3 scripts/setup-github.py`
+---
+
+## 이슈 대응표
+
+| | 항목 | 이슈 | 상태 |
+|---|---|---|---|
+| Q1 | 임기 게이트 `0.6` ★ | [#1](https://github.com/Kdreamtomaster/ax-commons/issues/1) | 열림 |
+| Q2 | 몇 B부터 작동하는가 | [#2](https://github.com/Kdreamtomaster/ax-commons/issues/2) | 열림 |
+| Q3 | Hermes Agent 연동 | [#3](https://github.com/Kdreamtomaster/ax-commons/issues/3) | 열림 |
+| Q4 | OpenClaw 연동 | [#4](https://github.com/Kdreamtomaster/ax-commons/issues/4) | 열림 |
+| Q5 | Codex `AGENTS.md` 분량 | [#5](https://github.com/Kdreamtomaster/ax-commons/issues/5) | 열림 |
+| Q6 | 산업 마진 스프레드 | [#6](https://github.com/Kdreamtomaster/ax-commons/issues/6) | 열림 |
+| Q7 | 채용공고 해석 규칙 | [#7](https://github.com/Kdreamtomaster/ax-commons/issues/7) | 열림 |
+| Q8 | 검증 등급 기준 | — | **보류**. 원장 항목이 쌓인 뒤 재검토 |
+| Q9 | 탈식별화가 실제로 되는가 | [#8](https://github.com/Kdreamtomaster/ax-commons/issues/8) | 열림 |
+| Q10 | 영어판 범위 | [#9](https://github.com/Kdreamtomaster/ax-commons/issues/9) | 열림 |
+
+> Q8만 이슈가 없다. 지금 논의해도 근거가 될 데이터가 없어서다.
+> [#2 템플릿](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=02-insight-entry.yml)으로
+> 원장 항목이 어느 정도 모이면 그때 연다.
+
+새 항목을 추가하면 [`scripts/setup-github.py`](../scripts/setup-github.py)에도 넣고
+`python3 scripts/setup-github.py` 를 돌린다. 이미 있는 이슈는 건너뛴다.
 
 ---
 
@@ -26,7 +48,8 @@
 **이미 나온 의심** 임기만이 아니라 **담당자 KPI와의 연결 여부**가 더 셀 수 있다.
 회수가 짧아도 자기 평가지표와 무관하면 움직이지 않는다.
 
-→ 이슈 템플릿 ①
+→ **[이슈 #1](https://github.com/Kdreamtomaster/ax-commons/issues/1)** ·
+보고는 [템플릿 ①](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=01-tenure-gate-report.yml)
 
 ---
 
@@ -48,7 +71,8 @@ R1 초안 우선 · `[불가]` 판정 · "남은 모름" · 반박 안내 · 임
 - 양자화를 어디까지 내려도 되는지. 등급 표기가 먼저 사라지는지
 - 국산 모델(EXAONE, Kanana)의 한국어 품질이 실제로 나은지
 
-→ 이슈 템플릿 ③
+→ **[이슈 #2](https://github.com/Kdreamtomaster/ax-commons/issues/2)** ·
+보고는 [템플릿 ③](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=03-model-report.yml)
 
 ---
 
@@ -67,7 +91,8 @@ R1 초안 우선 · `[불가]` 판정 · "남은 모름" · 반박 안내 · 임
 `insight-commons` 는 고객사명·가격·계약 조건이 **반드시 사라져야 한다**고 규정한다.
 프로필 격리가 불완전하면 **한 고객사 정보가 다른 고객사 대화로 샌다.**
 
-→ 이슈 템플릿 ④
+→ **[이슈 #3](https://github.com/Kdreamtomaster/ax-commons/issues/3)** ·
+보고는 [템플릿 ④](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=04-adapter-report.yml)
 
 ---
 
@@ -79,7 +104,8 @@ R1 초안 우선 · `[불가]` 판정 · "남은 모름" · 반박 안내 · 임
 - `openclaw.json` 의 `skills.load.extraDirs` 로 저장소를 직접 걸었을 때 되는지
 - `SOUL.md` 에 원칙을 넣었을 때 스킬과 충돌하지 않는지
 
-→ 이슈 템플릿 ④
+→ **[이슈 #4](https://github.com/Kdreamtomaster/ax-commons/issues/4)** ·
+보고는 [템플릿 ④](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=04-adapter-report.yml)
 
 ---
 
@@ -94,7 +120,8 @@ Codex가 이 길이를 다 읽는지, 앞부분만 반영하는지 모른다.
 Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알고 있으면 읽은 것이다.
 모르면 분량을 줄이거나 스킬을 하나만 넣어야 한다.
 
-→ 이슈 템플릿 ④
+→ **[이슈 #5](https://github.com/Kdreamtomaster/ax-commons/issues/5)** ·
+보고는 [템플릿 ④](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=04-adapter-report.yml)
 
 ---
 
@@ -110,7 +137,8 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 
 한국은행 기업경영분석, 통계청, 업종별 협회 공시가 공개 출처다.
 
-→ 이슈 템플릿 ⑤
+→ **[이슈 #6](https://github.com/Kdreamtomaster/ax-commons/issues/6)** ·
+제출은 [템플릿 ⑤](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=05-reference-data.yml)
 
 ---
 
@@ -125,7 +153,8 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 **무엇이 관찰되면 결론이 나는가**
 공고를 보고 세운 가설을 미팅에서 확인한 사례. 맞은 것보다 **틀린 것**이 값지다.
 
-→ 이슈 템플릿 ⑤
+→ **[이슈 #7](https://github.com/Kdreamtomaster/ax-commons/issues/7)** ·
+제출은 [템플릿 ⑤](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=05-reference-data.yml)
 
 ---
 
@@ -138,7 +167,9 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 **의심** 건수보다 **조건의 다양성**이 중요할 수 있다.
 같은 산업 3건보다 다른 산업 2건이 전이 범위를 더 잘 말해 준다.
 
-→ 이슈 템플릿 ②로 항목이 쌓이면 그때 재검토
+**이슈를 아직 열지 않았다.** 지금 논의해도 근거가 될 데이터가 없어서다.
+[템플릿 ②](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=02-insight-entry.yml)로
+원장 항목이 20건쯤 모이면 그때 연다.
 
 ---
 
@@ -151,7 +182,7 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 
 **필요한 것** 실패 사례. "이렇게 썼는데 사람들이 알아보더라"
 
-→ 새 이슈로 모은다
+→ **[이슈 #8](https://github.com/Kdreamtomaster/ax-commons/issues/8)**
 
 ---
 
@@ -165,6 +196,8 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 **정할 것** 원본 언어를 하나로 고정할지, 아니면 병행할지.
 지금은 **한국어가 원본**이고 영어는 요약이다.
 
+→ **[이슈 #9](https://github.com/Kdreamtomaster/ax-commons/issues/9)**
+
 ---
 
 ## 이 목록을 쓰는 법
@@ -172,5 +205,6 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 - 결론이 나면 해당 항목을 지우지 말고 **결론과 근거를 적어 남긴다**
 - 반례가 나오면 조건을 좁혀 다시 쓴다
 - 새로 모르는 것이 생기면 여기에 더한다
+- 이슈가 닫히면 위 대응표의 상태를 갱신한다
 
 **"남은 모름"이 비어 있으면 분석이 아니다.** 그 규칙은 이 문서에도 적용된다.
