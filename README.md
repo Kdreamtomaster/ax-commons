@@ -167,16 +167,49 @@ python scripts/build.py        # dist 전체 재생성
 ## 기여
 
 되돌려 주는 흐름이 있어야 이 프로젝트가 성립한다.
+한 사람의 원장은 몇 건짜리 경험칙이지만, 여럿이 모이면 독점 벤치마크를 대신할 자료가 된다.
 
-- **임기 게이트 임계값이 실제로 맞았는지 / 틀렸는지** ← 제일 필요하다
-- 산업별 마진 스프레드 참조값 (출처와 연도 포함)
-- 채용공고 해석 규칙 추가
-- 다른 언어 번역
-- 새 플랫폼 어댑터
+### 처음 오셨다면 → [`첫걸음`](https://github.com/Kdreamtomaster/ax-commons/labels/%EC%B2%AB%EA%B1%B8%EC%9D%8C) 이슈부터
 
-**반례가 확인보다 값지다.** 조건을 좁힐 수 있게 해 주기 때문이다.
+**돌려보고 결과만 알려주면 되거나, 고칠 곳이 명확한 것**에 이 딱지를 붙여 뒀다.
+프로그래밍을 안 해도 되는 것이 대부분이다.
 
-→ [CONTRIBUTING.md](CONTRIBUTING.md)
+```
+#2   Ollama 로 모델 하나 돌려보고 규칙을 지켰는지 체크박스만 채우기
+#3   Hermes Agent 를 쓰신다면 문서대로 되는지 확인
+#4   OpenClaw 를 쓰신다면 스킬 경로가 맞는지 확인
+#5   Codex 에 AGENTS.md 붙이고 "임기 게이트 계산해 줘" 물어보기
+#19  대립 검토에 절 하나 추가 — 고칠 파일이 정해져 있다
+```
+
+### 세 가지 방법
+
+| | 무엇 | 어디로 |
+|---|---|---|
+| **1** | **써 보고 결과 알려주기** ← 제일 필요하다 | [이슈 템플릿 ①③④](https://github.com/Kdreamtomaster/ax-commons/issues/new/choose) |
+| **2** | 현장에서 얻은 배움을 원장 항목으로 내놓기 | [이슈 템플릿 ②](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=02-insight-entry.yml) |
+| **3** | 문서·규칙·어댑터 고치기 | PR |
+
+**1번이 가장 값지다.** 이 저장소에는 아직 검증되지 않은 값이 여럿 있다.
+특히 [**임기 게이트 임계값 0.6**](https://github.com/Kdreamtomaster/ax-commons/issues/1)은
+경험칙이지 실측이 아니다.
+
+> **틀렸다는 보고가 맞았다는 보고보다 값지다.** 조건을 좁힐 수 있게 해 주기 때문이다.
+
+### 두 가지만 지켜 주시면 된다
+
+- **가공 데이터를 쓴다.** 예시든 원장 항목이든 회사가 특정되면 안 된다.
+  판단이 어려우면 `python3 scripts/scan-private.py` 가 잡아 준다
+- **`skills/` 를 고치고 `python3 scripts/build.py` 를 돌린다.**
+  `dist/` 를 직접 고치면 8벌이 서로 어긋난다
+
+### 답이 정해지지 않은 것은 [디스커션](https://github.com/Kdreamtomaster/ax-commons/discussions)
+
+검증으로 닫을 수 없는 것들을 열어 두었다.
+현업 모드가 대립을 만들지 않으려면, 원장을 어디에 모을지,
+그리고 **이 도구가 파는 쪽에 더 유리한 것 아닌지** 같은 것들이다.
+
+자세한 규칙은 → [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
