@@ -22,6 +22,8 @@
 | Q8 | 검증 등급 기준 | — | **보류**. 원장 항목이 쌓인 뒤 재검토 |
 | Q9 | 탈식별화가 실제로 되는가 | [#8](https://github.com/Kdreamtomaster/ax-commons/issues/8) | 열림 |
 | Q10 | 영어판 범위 | [#9](https://github.com/Kdreamtomaster/ax-commons/issues/9) | 열림 |
+| Q11 | 뻔한 답 게이트가 표에서 빠진다 | [#11](https://github.com/Kdreamtomaster/ax-commons/issues/11) | 열림 |
+| Q12 | 임기 게이트를 레벨별로 낼 것인가 | [#12](https://github.com/Kdreamtomaster/ax-commons/issues/12) | 열림 |
 
 > Q8만 이슈가 없다. 지금 논의해도 근거가 될 데이터가 없어서다.
 > [#2 템플릿](https://github.com/Kdreamtomaster/ax-commons/issues/new?template=02-insight-entry.yml)으로
@@ -197,6 +199,45 @@ Codex에게 "임기 게이트를 계산해 달라"고 했을 때 규칙을 알�
 지금은 **한국어가 원본**이고 영어는 요약이다.
 
 → **[이슈 #9](https://github.com/Kdreamtomaster/ax-commons/issues/9)**
+
+---
+
+## Q11. 뻔한 답 게이트가 표 형식 단계에서 건너뛰어진다
+
+**지금 상태** S2~S6에 게이트를 적용하도록 되어 있는데,
+**S4와 S6은 표로 정리되어 "뻔한 답 → 버림"을 끼워 넣을 자리가 없다.**
+
+[`examples/case-01`](../examples/case-01-precision-parts/01-analysis.md)에서도
+S2·S3·S5에서만 작동했다.
+
+하필 **S6이 개입 판정**이라, 제일 뻔한 답이 나오기 쉬운 자리가 그냥 지나간다.
+"수기 작업이니 자동화하면 된다" 같은 판정이 걸러지지 않는다.
+
+**무엇이 관찰되면 결론이 나는가**
+같은 입력으로 세 방식(표 앞 한 줄 / 표에 열 추가 / 산문 단계 한정)을 돌려
+S6 판정이 실제로 달라지는지 본다. 안 달라지면 현행 유지가 맞다.
+
+→ **[이슈 #11](https://github.com/Kdreamtomaster/ax-commons/issues/11)**
+
+---
+
+## Q12. 임기 게이트를 결정 레벨별로 내야 하는가
+
+**지금 상태** 만날 사람 **한 명**을 기준으로 통과/탈락만 낸다.
+
+case-01에서 문제가 드러났다. 만날 사람은 잔여 임기가 짧은 외부 영입 임원인데
+회사는 오너 경영이었다. **같은 안건이 본부장 선에서는 막히고 대표 선에서는 살아난다.**
+
+지금 규칙으로는 이게 표현되지 않아, "결정권을 올려라"를 사람이 따로 덧붙여야 했다.
+그건 규칙이 아니라 재량이고, 재현되지 않는다.
+
+**제안** 산출을 "안 팔린다"가 아니라 **"이 레벨부터 팔린다"**로 바꾼다.
+
+**걸리는 점** 레벨별 잔여 시야를 또 추정해야 하고, 소유구조에 따라 레벨 구성 자체가 다르다.
+PE 보유면 회수 시점이 모든 레벨을 덮어쓴다.
+
+→ **[이슈 #12](https://github.com/Kdreamtomaster/ax-commons/issues/12)** ·
+[#1](https://github.com/Kdreamtomaster/ax-commons/issues/1) 실측 보고에 함께 적어 주면 좋겠다
 
 ---
 
